@@ -1,0 +1,82 @@
+{% extends "finance/basic.html" %}
+{% load static %}
+{% block title%}Search Student{%endblock%}
+
+
+{% block body%}
+<div class="product-status mg-tb-15">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-left:26%;    margin-top: 5%;" >
+                        <div class="product-status-wrap ">
+                            <h4>Search Students </h4>
+
+                                <form id="myform" action="" enctype="multipart/form-data">
+                                <div id="myTabContent" class="tab-content custom-product-edit">
+                                    <div class="product-tab-list tab-pane fade active in" id="description">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                                <div class="review-content-section text-center">
+
+                                                     <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                        <input type="text" class="form-control" placeholder="First Name">
+                                                    </div>
+                                                    <select name="select" class="form-control pro-edt-select form-control-primary">
+															<option selected value="opt1">Grade</option>
+															<option value="opt2">0ne</option>
+															<option value="opt3">Two</option>
+															<option value="opt4">Three</option>
+															<option value="opt5">Four</option>
+															<option value="opt6">Five</option>
+                                                            <option value="opt6">Six</option>
+                                                            <option value="opt6">Seven</option>
+                                                            <option value="opt6">Eight</option>
+                                                            <option value="opt6">Nine</option>
+                                                            <option value="opt6">Ten</option>
+
+														</select><br>
+                                                     <select name="select" class="form-control pro-edt-select form-control-primary">
+															<option selected value="opt1">Section</option>
+															<option value="opt2">A</option>
+															<option value="opt3">B</option>
+															<option value="opt4">C</option>
+															<option value="opt5">D</option>
+															<option value="opt6">E</option>
+                                                            <option value="opt6">F</option>
+                                                            <option value="opt6">G</option>
+                                                            <option value="opt6">H</option>
+                                                            <option value="opt6">I</option>
+                                                            <option value="opt6">J</option>
+
+														</select>
+
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
+                                                    <br><button type="button" class="btn btn-success ">Search</button>
+														</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                              </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock%}

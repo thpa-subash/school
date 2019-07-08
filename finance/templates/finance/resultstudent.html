@@ -1,0 +1,58 @@
+{% extends "finance/basic.html" %}
+{% load static %}
+{% block title%}Search Student{%endblock%}
+{% block stitle%}Home{%endblock%}
+{% block s1title%}Search Student{%endblock%}
+
+{% block body%}
+<div class="product-status mg-tb-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="product-status-wrap">
+                            <h4>Fees Payment</h4>
+                            <div class="add-product">
+                                <a href="/studentfees">Search Student</a>
+                            </div>
+                                  <table>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Grade</th>
+                                    <th>Section</th>
+                                    <th>Due Months</th>
+                                    <th>Due</th>
+                                    <th>Total Amount</th>
+                                    <th>Payment</th>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/new-product/5-small.jpg" alt="" /></td>
+                                    <td>Jewelery Title 1</td>
+                                    <td>
+                                       2
+                                    </td>
+                                    <td>A</td>
+                                    <td>Baisakh,jestha</td>
+                                    <td>$750</td>
+                                    <td>$1000</td>
+
+                                    <td>
+                                        <!--retrive student id and go to next page-->
+                                        <a href="/editfeespayment"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+                                    </a></td>
+                                </tr>
+
+
+
+
+
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock%}
