@@ -42,7 +42,7 @@
                                     <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i>New Admission</a></li>
 
                                 </ul>
-                                <form id="myform" action="#" method="post" enctype="multipart/form-data">
+                                <form id="myform" action="/student/add_student/" method="post" enctype="multipart/form-data">
                                     {% csrf_token %}
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
@@ -173,7 +173,7 @@
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
-                                                    <button type="button"  class="btn btn-success ">Save</button>
+                                                    <button type="submit"  class="btn btn-success ">Save</button>
 														</button>
                                                     <button type="button" id="close" class="btn btn-danger waves-effect waves-light">Discard</button>
 														</button>

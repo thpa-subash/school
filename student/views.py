@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from student.forms import newstudent
+from student.forms import  NewStudentForm
 from . import views
 
 # Create your views here.
@@ -31,6 +31,15 @@ def newstd(request):
     ),"""
     return render(request, 'student/new-student.html')
 
+
+def add_student(request):
+    print(request.method)
+    form = NewStudentForm(request.POST)
+    if form.is_valid():
+        form.save()
+    else:
+        print("Error ")
+    return render(request, 'student/new-student.html')
 
 def approve(request):
     return render(request, 'student/approve-student.html')
