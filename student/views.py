@@ -1,6 +1,9 @@
+import json
+
 from django.shortcuts import render
 
-from student.forms import  NewStudentForm
+from student.forms import NewStudentForm
+from student.models import student_detail
 from . import views
 
 # Create your views here.
@@ -9,6 +12,7 @@ from . import views
     context = {'std': std}
     return context
 """
+
 
 def newstd(request):
     """if request.method == 'POST':
@@ -29,17 +33,37 @@ def newstd(request):
         Grade=request.POST['grade'],
         Players=request.POST['players']
     ),"""
+
     return render(request, 'student/new-student.html')
+
+
 
 
 def add_student(request):
-    print(request.method)
-    form = NewStudentForm(request.POST)
-    if form.is_valid():
-        form.save()
-    else:
-        print("Error ")
+    # if request.method == 'POST':
+    #     # body_unicode = request.body.decode('utf-8')
+    #     print(request.body['FirstName'])
+    #     print(request.body['LastName'])
+        # body = json.loads(body_unicode)
+        # s= student_detail()
+        # print(body['FirstName'])
+        # s.FirstName = body['FirstName']
+        # s.save()
+        # print("S is saved "   + s)
+    try:
+        fname = request.POST['FirstName']
+        lname = request.POST['FirstName']
+        s = student_detail()
+        s.FirstName = fname
+        s.LastName = lname
+        s.Transportaion = 1
+        s.Hostel = 1
+        s.save()
+        print("Saved")
+    except Exception as e:
+        print("Error in saving {}".format(e))
     return render(request, 'student/new-student.html')
+
 
 def approve(request):
     return render(request, 'student/approve-student.html')
@@ -47,6 +71,7 @@ def approve(request):
 
 def delete(request):
     return render(request, 'student/delete-student.html')
+
 
 def example(request):
     FirstName = "not logged in"
@@ -56,8 +81,7 @@ def example(request):
 
         if MyLoginForm.is_valid():
             FirstName = MyLoginForm.cleaned_data['FirstName']
-    else:
-        MyLoginForm = newstudent()
+        newstudent.save()
+        print("student form saved")
 
-        return render(request, 'student/eg.html', {"FirstName": FirstName})
-
+    return render(request, 'student/eg.html', {"FirstName": FirstName})
