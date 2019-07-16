@@ -40,19 +40,9 @@ def newstd(request):
 
 
 def add_student(request):
-    # if request.method == 'POST':
-    #     # body_unicode = request.body.decode('utf-8')
-    #     print(request.body['FirstName'])
-    #     print(request.body['LastName'])
-        # body = json.loads(body_unicode)
-        # s= student_detail()
-        # print(body['FirstName'])
-        # s.FirstName = body['FirstName']
-        # s.save()
-        # print("S is saved "   + s)
     try:
         fname = request.POST['FirstName']
-        lname = request.POST['FirstName']
+        lname = request.POST['LastName']
         s = student_detail()
         s.FirstName = fname
         s.LastName = lname
