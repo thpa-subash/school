@@ -1,13 +1,18 @@
 from django.urls import path
+
+
 from .import views
 
 
 urlpatterns = [
 
-    path('newstudent/', views.newstd, name="NewStudent"),
+    path('add_student/', views.add_student, name="AddStudent"),
+    path('student_details/', views.student_details, name="studentdetails"),
+    path('edit_student/<int:id>', views.edit_student, name="editstudent"),
     path('approve/', views.approve, name="NewStudent"),
-    path('delete/', views.approve, name="NewStudent"),
-    path('eg/', views.example, name="example"),
+    path('delete/<int:id>', views.delete_student, name="NewStudent"),
+    path('update/<int:id>', views.update, name="update"),
+
 
 
 

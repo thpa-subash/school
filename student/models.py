@@ -6,21 +6,22 @@ from django.utils import timezone
 class student_detail(models.Model):
     student_id = models.AutoField
     FirstName = models.CharField(max_length=20)
+
     LastName = models.CharField(max_length=20)
     date = models.DateField(auto_now=True)
     GaurdainsName = models.CharField(max_length=30)
-    Occupation = models.CharField(max_length=30)
-    MailingAddress = models.CharField(max_length=30)
 
-    Gender = models.CharField(max_length=20)
-    PhoneNumber = models.CharField(max_length=10)
-    Hobbies = models.CharField(max_length=20)
-    Transportaion = models.IntegerField()
-    Hostel = models.IntegerField()
-    LastInstitution = models.CharField(max_length=40)
-    Percentage = models.CharField(max_length=2)
-    Grade =models.CharField(max_length=2)
-    Players = models.CharField(max_length=30)
+    Occupation = models.CharField(max_length=30 ,default="Agricultural")
+    MailingAddress = models.CharField(max_length=30,default="Kathmandu")
+
+    Gender = models.CharField(max_length=20 ,default="Male")
+    PhoneNumber = models.CharField(max_length=10,default="None")
+    Hobbies = models.CharField(max_length=20 ,default="none")
+    Services=models.CharField(max_length=30,default="None")
+    LastInstitution = models.CharField(max_length=40 ,default="None")
+    Percentage = models.CharField(max_length=2,default="0")
+    Grade =models.CharField(max_length=2, default="one")
+    Players = models.CharField(max_length=30,default="None")
     def __str__(self):
      return self.FirstName
 
