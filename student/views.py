@@ -1,6 +1,7 @@
 import json
 from django.shortcuts import render,redirect
-
+from django.shortcuts import render
+from student.forms import NewStudentForm
 from student.models import student_detail
 from . import views
 
@@ -10,7 +11,6 @@ from . import views
     context = {'std': std}
     return context
 """
-
 
 
 def add_student(request):
@@ -47,11 +47,36 @@ def add_student(request):
         s.PhoneNumber=pnumber
         s.date=date
         #s.Hobbies=str(hobbies)
-        s.save()
         print("Saved")
     except Exception as e:
         print("Error in saving {}".format(e))
     return render(request, 'student/new-student.html')
+
+
+
+def newstd(request):
+    """if request.method == 'POST':
+        std = student_detail(
+        FirstName=request.POST['FirstName'],
+        LastName=request.POST['lastname'],
+        date=request.POST['date'],
+        GaurdainsName=request.POST['gname'],
+        Occupation=request.POST['occupation'],
+        MailingAddress=request.POST['maddress'],
+        Gender=request.POST['gender'],
+        PhoneNumber=request.POST['pnumber'],
+        Hobbies=request.POST['hobbies'],
+        Transportaion=request.POST['trans'],
+        Hostel=request.POST['hostel'],
+        LastInstitution=request.POST['linstitution'],
+        Percentage=request.POST['percent'],
+        Grade=request.POST['grade'],
+        Players=request.POST['players']
+    ),"""
+
+    return render(request, 'student/new-student.html')
+
+
 
 
 def student_details(request):
@@ -76,14 +101,8 @@ def update(request,id):
     return render(request,'student/edit-student.html',{'student':student})
 
 
-
-
-
-
 def delete_student(request):
     studentdelete = student_detail.object.get(id=id)
     studentdelete.delete()
     return redirect("/approve")
-
-
 
