@@ -1,4 +1,4 @@
-{% extends "student/basic.html" %}
+{% extends "cebsapp/basic.html" %}
 {% load static %}
 {% block title%}Approve Student{%endblock%}
 {% block stitle%}Home{%endblock%}
@@ -28,7 +28,10 @@
                                 </tr>
                                 {% for student in students %}
                                 <tr>
-                                    <td><img src="img/new-product/5-small.jpg" alt="" /></td>
+                                    <td>
+
+                                    <img src ='{{student.image.url}}'>
+                                    </td>
                                     <td>{{ student.FirstName}}</td>
                                     <td>
                                         <button class="pd-setting">Active</button>
@@ -39,7 +42,7 @@
                                     <td>{{student.PhoneNumber}}</td>
                                     <td>
                                         <a href="/student/edit_student/{{student.id}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                        <a href="/student/delete_student"> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                        <a href="/student/delete/{{student.id}}"> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true" onclick="return alert('Are you sure you want to delete {{student.FirstName}}&nbsp;{{student.LastName}} from Record?');"></i></button></a>
                                     </td>
                                 </tr>
                                 {% endfor %}

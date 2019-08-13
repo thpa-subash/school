@@ -1,4 +1,4 @@
-{% extends "student/basic.html" %}
+{% extends "cebsapp/basic.html" %}
 {% load static %}
 {% block title %}New Student{% endblock %}
 
@@ -28,6 +28,7 @@
 
 </script>
 {% endblock %}
+
 {% block stitle%}Home{%endblock%}
 {% block s1title%}New Student{%endblock%}
 {% block body %}
@@ -42,6 +43,7 @@
                                     <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i>New Admission</a></li>
 
                                 </ul>
+
                                 <form id="myform" action="/student/add_student/" method="post" enctype="multipart/form-data">
                                     {% csrf_token %}
                                 <div id="myTabContent" class="tab-content custom-product-edit">
@@ -80,7 +82,7 @@
 														</select><br><br>
                                                     <!-- Default unchecked -->
                                                         <div name= "hobbies" class="custom-control custom-checkbox">
-                                                            <input type="checkbox" value="Football" class="custom-control-input" >
+                                                            <input type="checkbox" value="Football" checked class="custom-control-input" >
                                                             <label class="custom-control-label" >Football</label>
                                                             <input type="checkbox" value="Cricket" class="custom-control-input" >
                                                             <label class="custom-control-label" >Cricket</label>
@@ -96,11 +98,11 @@
                                                         </div>
                                                      <div class="custom-control custom-checkbox" name="service" ><br>
                                                          <label class="custom-control-label" >Did you need any Service ?</label><br>
-                                                            <input type="checkbox" name="Hostel"  value="Hostel" class="custom-control-input" >
+                                                            <input type="checkbox" name="service[]"  value="Hostel" class="custom-control-input" >
                                                             <label class="custom-control-label" >Hostel</label>
-                                                            <input type="checkbox" name="Transportation" value="Transportation" class="custom-control-input" >
+                                                            <input type="checkbox" name="service" value="Transportation" class="custom-control-input" >
                                                             <label class="custom-control-label" >Transportation</label>
-                                                             <input type="checkbox" name="Computer" class="custom-control-input" value="Computer" >
+                                                             <input type="checkbox" name="service" class="custom-control-input" value="Computer" >
                                                          <label class="custom-control-label">Computer </label>
 
 
@@ -122,6 +124,10 @@
                                                         <input type="text" name="gname" class="form-control" placeholder="Gaurdain's Name">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                        <input type="text" name="emailid" class="form-control" placeholder="Gaurdain Gmail Id">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-ticket" aria-hidden="true"></i></span>
                                                         <input type="text" name="occupation" class="form-control" placeholder="Occupation">
                                                     </div>
@@ -134,14 +140,19 @@
 
                                                           <label><input type="radio" name="gender" value="Others" >Others</label>
                                                       </div>
-                                                    <div class="input-group mb-b-pro-edt custom-file">
-                                                         <span class="input-group-addon"><i class="fa fa-ticket" aria-hidden="true"></i></span>
-                                                      <div class="custom-file">
-                                                        <input type="file" id="inputGroupFile02" class="custom-file-input form-control custom-file-input" id="inputGroupFile02">
+                                                   <div class="file-upload-inner ts-forms">
+                                                                    <div class="input prepend-big-btn">
+                                                                        <label class="icon-right" for="prepend-big-btn">
+																				<i class="fa fa-download"></i>
+																			</label>
+                                                                        <div class="file-button">
+                                                                            Browse
+                                                                            <input type="file" name="image"  onchange="document.getElementById('prepend-big-btn').value = this.value;">
 
-                                                      </div>
-
-                                                    </div>
+                                                                        </div>
+                                                                        <input type="text"  id="prepend-big-btn" placeholder="CHOOSE A PROFILE PICTURE">
+                                                                    </div>
+                                                                </div>
 
                                                 </div>
                                             </div>

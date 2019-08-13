@@ -17,10 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+
 import cebsapp
 from cebsapp import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
+
 
 import student
 from student import views
@@ -28,14 +31,27 @@ import finance
 from finance import views
 
 urlpatterns = [
+    #urls for admin and login and logout
     path('admin/', admin.site.urls),
+    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'),name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='login'),name='logout'),
+
+
+
+
+
+    #urls for dashboard
     path('', cebsapp.views.home, name="home"),
+
     #student urls
     path('student/',include('student.urls')),
-   # path('newstudent/', student.views.new, name="New Student"),
+    path('teacher/',include('teacher.urls')),
+    path('mailaddress/',include('mailaddress.urls')),
+    path('fees/',include('fees.urls')),
+    path('blog/',include('blog.urls')),
 
-    path('index/',cebsapp.views.index , name="index"),
-    path('home/' ,cebsapp.views.home ,name="home"),
+   #path('index/',cebsapp.views.index , name="index"),
+    #path('home/' ,cebsapp.views.home ,name="home"),
 
     path('edit-student/', cebsapp.views.edit ,name="edit"),
     path('details-student/', cebsapp.views.detailsstudent , name="details"),
@@ -48,12 +64,9 @@ urlpatterns = [
     #path('mailcompose/', cebsapp.views.compose,name="compose"),
     #//path('inbox/', cebsapp.views.inbox,name="tdetails"),
     #finance urls
-    path('studentfees/',finance.views.student, name="Student Fees"),
-    path('resultstudent/',finance.views.resultstudent, name="Student Result"),
-    path('editfeespayment/',finance.views.editfees, name="Student Result"),
-    path('teacherpayment/',finance.views.teacher, name="Teacher Payment"),
 
 
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

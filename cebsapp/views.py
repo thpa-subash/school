@@ -1,8 +1,18 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from blog.models import Blog
+from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='/login/')
 def home(request):
-    return render(request, 'cebsapp/home.html')
+    # retrive 3 blog
+    blogs = Blog.objects.all()[3:]
+    return render(request, 'cebsapp/home.html', {'blogs': blogs})
+
+
+
+
+
 
 
 def index(request):

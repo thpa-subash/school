@@ -3,6 +3,7 @@ from django.db import models
 from datetime import date
 from django.utils import timezone
 
+
 class student_detail(models.Model):
     student_id = models.AutoField
     FirstName = models.CharField(max_length=20)
@@ -10,6 +11,8 @@ class student_detail(models.Model):
     LastName = models.CharField(max_length=20)
     date = models.DateField(auto_now=True)
     GaurdainsName = models.CharField(max_length=30)
+    emailid =models.CharField(max_length=20,default="none")
+    image = models.ImageField(upload_to='images/profile/', blank=True, null=True)
 
     Occupation = models.CharField(max_length=30 ,default="Agricultural")
     MailingAddress = models.CharField(max_length=30,default="Kathmandu")

@@ -27,6 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'gurkhasarmy@gmail.com'
+EMAIL_HOST_PASSWORD = 's@u@b@a@s@h'
+
 
 # Application definition
 
@@ -40,9 +46,11 @@ INSTALLED_APPS = [
     'cebsapp.apps.CebsappConfig',
     'student.apps.StudentConfig',
     'teacher.apps.TeacherConfig',
+    'mailaddress.apps.MailaddressConfig',
     'blog.apps.BlogConfig',
     'finance.apps.FinanceConfig',
     'Result.apps.ResultConfig',
+    'fees.apps.FeesConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +135,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS =(
     os.path.join(BASE_DIR,'static'),
 )
+
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
+
+LOGIN_REDIRECT_URL ='/'
+LOGOUT_REDIRECT_URL ='/'
+

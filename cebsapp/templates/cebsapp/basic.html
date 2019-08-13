@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html  lang="en">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -47,11 +47,11 @@
     <!-- main CSS
 		============================================ -->
 
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" >
     <!-- morrisjs CSS
 		============================================ -->
 
-    <link rel="stylesheet" href="{% static 'css/morrisjs/morris.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/morrisjs/morris.css' %}">
     <!-- mCustomScrollbar CSS
 		============================================ -->
 
@@ -59,13 +59,21 @@
     <!-- metisMenu CSS
 		============================================ -->
 
-    <link rel="stylesheet" href=" {% static 'css/metisMenu/metisMenu.min.css' %} " type="text/css">
-    <link rel="stylesheet" href="{% static 'css/metisMenu/metisMenu-vertical.css' %}" type="text/css">
+    <link rel="stylesheet" href=" {% static 'css/metisMenu/metisMenu.min.css' %} " >
+    <link rel="stylesheet" href="{% static 'css/metisMenu/metisMenu-vertical.css' %}">
+
+    <link rel="stylesheet" href="{% static  'css/summernote/summernote.css' %}" >
     <!-- calendar CSS
 		============================================ -->
 
-    <link rel="stylesheet" href=" {% static  'css/calendar/fullcalendar.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static   'css/calendar/fullcalendar.print.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/calander.css' %}">
+
+     <!-- modals CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/modals.css' %}">
+    <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/form/all-type-forms.css' %}">
 
     <!-- responsive CSS
 		============================================ -->
@@ -79,7 +87,7 @@
 
 </head>
 
-<body>
+
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -87,10 +95,10 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="/home"><h1><!--<img class="main-logo" src="img/logo/logo.png" alt=""--> CEBS</h1></a>
+                <a href="/"><h1>CEBS</h1></a>
                 <strong>
 
-                    <!--<img src="{% static 'img/logo/logo.png' %}" alt="" />-->CEBS</strong>
+                    CEBS</strong>
 
 
             </div>
@@ -98,7 +106,7 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="home/">
+                            <a class="has-arrow" href="/">
 								   <i class="fa big-icon fa-home icon-wrap"></i>
 								   <span class="mini-click-non">HOME</span>
 								</a>
@@ -115,16 +123,16 @@
                         <li>
                             <a class="has-arrow" href="teacher" aria-expanded="false"><i class="fa big-icon fa-user icon-wrap"></i> <span class="mini-click-non">Teacher</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Add Teacher" href="/addteacher"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Add Teacher</span></a></li>
-                                <li><a title="Edit Teacher" href="/editteacher"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Edit Teacher</span></a></li>
-                                <li><a title="Teacher Details" href="/teacherdetails"><i class="fa fa-paper-plane sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Teacher Details</span></a></li>
+                                <li><a title="Add Teacher" href="/teacher/add_teacher"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Add Teacher</span></a></li>
+                                <li><a title="Edit Teacher" href="/teacher/approve"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Edit Teacher</span></a></li>
+                                <li><a title="Teacher Details" href="/teacher/teacher_details"><i class="fa fa-paper-plane sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Teacher Details</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="/mailcompose"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Compose</span></a></li>
-                                <li><a title="View Mail" href="/inbox"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Inbox</span></a></li>
+                                <li><a title="Compose" href="/mailaddress/compose"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Compose</span></a></li>
+                                <li><a title="Inbox" href="/mailaddress/inbox"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Inbox</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -137,12 +145,19 @@
 
                             </ul>
                         </li>
-                        <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-pie-chart icon-wrap"></i> <span class="mini-click-non">Blog</span></a>
+                         <li>
+                            <a class="has-arrow" href="" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Fees</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="File Manager" href="file-manager.html"><i class="fa fa-folder sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Notice</span></a></li>
-                                <li><a title="Blog" href="blog.html"><i class="fa fa-square sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Article</span></a></li>
-                                <li><a title="Blog Details" href="blog-details.html"><i class="fa fa-tags sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Blog Details</span></a></li>
+                                <li><a title="Compose" href="/fees/classfees"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Class Fees</span></a></li>
+                                <li><a title="Inbox" href="/fees/updatefees"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Update fees</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-files-o icon-wrap"></i> <span class="mini-click-non">Blog</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="File Manager" href="/blog/createblog"><i class="fa fa-folder sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Create Blog</span></a></li>
+                                <li><a title="Blog" href="/blog/allblogs"><i class="fa fa-tags sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Article</span></a></li>
+
 
                             </ul>
                         </li>
@@ -161,7 +176,7 @@
                         <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Calander</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Peity Charts" href="static-table.html"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Static Table</span></a></li>
+                                <li><a title="Peity Charts" href="static-table.html"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Create Event</span></a></li>
                                 <li><a title="Data Table" href="data-table.html"><i class="fa fa-th sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Data Table</span></a></li>
                             </ul>
                         </li>
@@ -236,9 +251,9 @@
                                                 </li>
                                                 <li class="nav-item"><a href="#" class="nav-link">About</a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Services</a>
+                                                <li class="nav-item"><a href="#" class="nav-link">Blog</a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Support</a>
+                                                <li class="nav-item"><a href="#" class="nav-link">Gallery</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -395,32 +410,29 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li class="nav-item">
-                                                    <a href="#" data-toggle="dropdown" role="button"
-                                                       aria-expanded="false" class="nav-link dropdown-toggle">
-                                                        <i class="fa fa-user adminpro-user-rounded header-riht-inf"
+
+    <li class="nav-item">
+        <a href="#" data-toggle="dropdown" role="button"
+           aria-expanded="false" class="nav-link dropdown-toggle">
+            <i class="fa fa-user adminpro-user-rounded header-riht-inf"
                                                            aria-hidden="true"></i>
-                                                        <span class="admin-name">Advanda Cro</span>
-                                                        <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
-                                                    </a>
-                                                    <ul role="menu"
-                                                        class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="register.html"><span
-                                                                class="fa fa-home author-log-ic"></span>Register</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="fa fa-user author-log-ic"></span>My
+            <span class="admin-name">{{user.username}}</span>
+            <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
+        </a>
+        <ul role="menu"
+            class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+
+            <li><a href="#"><span class="fa fa-user author-log-ic"></span>My
                                                             Profile</a>
-                                                        </li>
-                                                        <li><a href="lock.html"><span
-                                                                class="fa fa-diamond author-log-ic"></span> Lock</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
-                                                        </li>
-                                                        <li><a href="login.html"><span
-                                                                class="fa fa-lock author-log-ic"></span>Log Out</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
+            </li>
+
+
+            <li><a href="/logout/"><span class="fa fa-lock author-log-ic"></span>Log Out</a>
+            </li>
+        </ul>
+    </li>
+
+
                                                 <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown"
                                                                                          role="button"
                                                                                          aria-expanded="false"
@@ -936,6 +948,17 @@
                                                 </li>
                                             </ul>
                                         </li>
+                                         <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span
+                                                class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                            <ul id="demo" class="collapse dropdown-header-top">
+                                                <li><a href="mailbox.html">Inbox</a>
+                                                </li>
+                                                <li><a href="mailbox-view.html">View Mail</a>
+                                                </li>
+                                                <li><a href="mailbox-compose.html">Compose Mail</a>
+                                                </li>
+                                            </ul>
+                                        </li>
                                         <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span
                                                 class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="others" class="collapse dropdown-header-top">
@@ -1103,17 +1126,10 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- jquery
-
-		============================================ -->
-
-    <script src="{%static 'js/vendor/jquery-1.11.3.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-1.11.3.min.js' %}"></script>
     <!-- bootstrap JS
 		============================================ -->
-
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
 
     <!-- wow JS
 		============================================ -->
@@ -1157,9 +1173,9 @@
     <script src="{% static 'js/morrisjs/raphael-min.js' %}"></script>
     <script src="{% static 'js/morrisjs/morris.js' %}"></script>
     <script src="{% static 'js/morrisjs/morris-active.js' %}"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
+   <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>-->
     <!-- morrisjs JS
 		============================================ -->
 
@@ -1168,12 +1184,21 @@
     <!-- calendar JS
 		============================================ -->
 
-    <script src="{% static 'js/calendar/moment.min.js' %}"></script>
-    <script src="{% static 'js/calendar/fullcalendar.min.js' %}"></script>
-    <script src="{% static 'js/calendar/fullcalendar-active.js' %}"></script>
+     <script type="text/javascript" src="{% static 'js/caleandar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/demo.js' %}"></script>
     <!-- plugins JS
 		============================================ -->
+    <script src="{% static 'js/summernote/summernote.min.js' %}"></script>
+    <script src="{% static 'js/summernote/summernote-active.js' %}"></script>
 
+
+
+ <!-- icheck JS
+		============================================ -->
+    <script src="{% static 'js/icheck/icheck.min.js' %}"></script>
+    <script src="{% static 'js/icheck/icheck-active.js' %}"></script>
+
+    <script src="{% static 'js/tab.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <!-- main JS
 		============================================ -->
