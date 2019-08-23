@@ -1,13 +1,14 @@
 
 from django.shortcuts import render, get_object_or_404
 from .models import Blog
+
 from django.core.files.storage import FileSystemStorage
 
 def createblog(request):
     if request.method == 'POST':
 
 
-        print(request.POST)
+
         title = request.POST['title']
         blog_photo = request.FILES['image']
         textbody = request.POST['textbody']

@@ -28,7 +28,7 @@
                                 </tr>
                                 {% for teacher in teacher %}
                                 <tr>
-                                    <td><img src="img/new-product/5-small.jpg" alt="" /></td>
+                                    <td><img src="{{teacher.image.url}}" alt="" /></td>
                                     <td>{{ teacher.FirstName}}</td>
                                     <td>
                                         <button class="pd-setting">Active</button>
@@ -39,7 +39,7 @@
                                     <td>{{teacher.PhoneNumber}}</td>
                                     <td>
                                         <a href="/teacher/edit_teacher/{{teacher.id}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                        <a href="/teacher/delete"> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                        <a href="/teacher/delete/{{teacher.id}}"> <button data-toggle="tooltip" onclick="return alert('Are you sure you want to delete {{teacher.FirstName}}&nbsp;{{teacher.LastName}} from Record?');" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                     </td>
                                 </tr>
                                 {% endfor %}

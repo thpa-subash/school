@@ -3,7 +3,9 @@ from django.shortcuts import render,redirect
 from django.shortcuts import render
 from student.forms import NewStudentForm
 from student.models import student_detail
+
 from . import views
+
 
 
 
@@ -21,7 +23,7 @@ def add_student(request):
         gender = request.POST['gender']
         players = request.POST['players']
         pnumber = request.POST['pnumber']
-        student_photo = request.FILES['image']
+        student_photo =request.FILES.get('image',default='images/avatar.jpg')
         occupation=request.POST['occupation']
         service = request.POST.getlist('service[]')
         services = ' ,'.join(service)
@@ -51,7 +53,9 @@ def add_student(request):
         s.date=date
         #s.Hobbies=str(hobbies)
         s.save()
-        error ="Successfully Create New Student"
+
+
+        print("Successfully Create New Student")
     except Exception as e:
         print("Error in saving {}".format(e))
     return render(request, 'student/new-student.html')
@@ -91,4 +95,6 @@ def delete_student(request,id):
 
     studentdelete.delete()
     return redirect("/student/approve")
+
+
 

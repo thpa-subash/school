@@ -11,6 +11,7 @@ class teacher_detail(models.Model):
     GaurdainsName = models.CharField(max_length=30)
     Occupation = models.CharField(max_length=30 ,default="Agricultural")
     MailingAddress = models.CharField(max_length=30,default="Kathmandu")
+    image = models.ImageField(upload_to='images/profile/', blank=True, null=True, default='/images/avatar.jpg')
     Gender = models.CharField(max_length=20 ,default="Male")
     PhoneNumber = models.CharField(max_length=10,default="None")
     Services=models.CharField(max_length=30,default="None")

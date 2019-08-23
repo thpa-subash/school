@@ -1,18 +1,13 @@
 from django.db import models
 
+class stdfee(models.Model):
+    year = models.IntegerField()
+    classname = models.CharField(max_length=1000)
+    monthlyfee = models.IntegerField()
+    admissionfee = models.IntegerField()
+    transfee = models.IntegerField()
+    compfee = models.IntegerField()
+    hostelfee = models.IntegerField()
 
-
-class classfees(models.Model):
-
-
-   classname = models.CharField(max_length=2)
-   fees = models.CharField(max_length=10)
-   year= models.CharField(max_length=10)
-   def __str__(self):
-     return self.classname
-
-
-
-
-
-
+    def __str__(self):
+        return self.classname

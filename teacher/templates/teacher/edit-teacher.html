@@ -78,38 +78,20 @@
                                                     </div>
 
 
-                                                     <!--<div class="custom-control custom-checkbox" name="service" ><br>
-                                                         <label class="custom-control-label" >Did you need any Service ?</label><br>
-
-                                                         {% if Hostel in list(editteacher.Services.split(" ,")) %}
-                                                            <input type="checkbox" name="Hostel"  value="Hostel" checked class="custom-control-input" >
-                                                            <label class="custom-control-label" > Hostel</label>
-                                                         {% else %}
-                                                            <input type="checkbox" name="Hostel"  value="Hostel" class="custom-control-input" >
-                                                            <label class="custom-control-label" > Hoste</label>
-                                                         {% endif %}
-                                                         <input type="checkbox" name="Transportation" value="Transportation" class="custom-control-input" >
-                                                            <label class="custom-control-label" >Transportation</label>
-                                                             <input type="checkbox" name="Computer" class="custom-control-input" value="Computer" >
-                                                         <label class="custom-control-label">Computer </label><label>{{editstudent.Services}}</label>
-
-
---
-                                                        </div>-->
                                                     <div class="custom-control custom-checkbox" name="service" ><br>
                                                          <label class="custom-control-label" >Did you need any Service ?</label><br>
 
-                                                         {% for Hostel in editteacher.Services %}
+
                                                             <input type="checkbox" name="service"  value="Hostel" checked class="custom-control-input" >
-                                                            <label class="custom-control-label" > {{Hostel}}</label>
-                                                         {% endfor %}
+                                                            <label class="custom-control-label" > Hostel</label>
+
                                                             <input type="checkbox" name="Hostel"  value="Hostel" class="custom-control-input" >
                                                             <label class="custom-control-label" > Hoste</label>
 
                                                          <input type="checkbox" name="Transportation" value="Transportation" class="custom-control-input" >
                                                             <label class="custom-control-label" >Transportation</label>
                                                              <input type="checkbox" name="Computer" class="custom-control-input" value="Computer" >
-                                                         <label class="custom-control-label">Computer </label><label>{{editstudent.Services}}</label>
+                                                         <label class="custom-control-label">Computer </label><label>computer</label>
 
 
 

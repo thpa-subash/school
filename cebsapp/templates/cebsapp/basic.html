@@ -148,7 +148,7 @@
                          <li>
                             <a class="has-arrow" href="" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Fees</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Compose" href="/fees/classfees"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Class Fees</span></a></li>
+                                <li><a title="Compose" href="/fees/classfee"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Class Fees</span></a></li>
                                 <li><a title="Inbox" href="/fees/updatefees"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Update fees</span></a></li>
                             </ul>
                         </li>
@@ -1200,10 +1200,37 @@
 
     <script src="{% static 'js/tab.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
+
     <!-- main JS
 		============================================ -->
 
     <script src="{% static 'js/main.js' %}"></script>
+<script src="//cdn.tinymce.com/4/tinymce.js"></script>
+<!-- Set preference of what should be visible on init -->
+ <!--<script src="{% static 'js/tinymce.js' %}"></script>-->
+<script>tinymce.init({
+      selector: '#foo',
+      height: 300,
+      theme: 'modern',
+      plugins: [
+        'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        'searchreplace wordcount visualblocks visualchars code fullscreen',
+        'insertdatetime media nonbreaking save table contextmenu directionality',
+        'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
+      ],
+      toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+      toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
+      image_advtab: true,
+      templates: [
+        { title: 'Test template 1', content: 'Test 1' },
+        { title: 'Test template 2', content: 'Test 2' }
+      ],
+      content_css: [
+        '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+        '//www.tinymce.com/css/codepen.min.css'
+      ]
+     });
+    </script>
 </body>
 
 </html>

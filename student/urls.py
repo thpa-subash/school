@@ -7,6 +7,7 @@ from .import views
 urlpatterns = [
 
     path('add_student/', views.add_student, name="AddStudent"),
+
     path('student_details/', views.student_details, name="studentdetails"),
     path('edit_student/<int:id>', views.edit_student, name="editstudent"),
     path('newstudent/', views.newstd, name="NewStudent"),

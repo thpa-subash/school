@@ -2,9 +2,10 @@
 {% block title %}Add Teacher{% endblock %}
 {% block script%}
 
+
 {% endblock %}
 {% block stitle%}Home{%endblock%}
-{% block s1title%}Add Teacher{%endblock%}
+{% block s1title%}Create Blog{%endblock%}
 {% block body %}
  <div class="single-product-tab-area mg-tb-15">
             <!-- Single pro tab review Start-->
@@ -14,7 +15,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="review-tab-pro-inner">
                                 <ul id="myTab3" class="tab-review-design">
-                                    <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i>Add Teacher</a></li>
+                                    <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i>Create Blog</a></li>
 
                                 </ul>
                                <form id="myform" action="/blog/createblog/" method="post" enctype="multipart/form-data">
@@ -22,8 +23,8 @@
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row justify-content-center">
-                                            <div class="col-lg-2 col-md-2 col-sm-8 col-xs-12 "></div>
-                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 justify-content-center">
+                                            <div class="col-lg-1 col-md-1 col-sm-8 col-xs-12 "></div>
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 justify-content-center">
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
@@ -42,13 +43,13 @@
                                                                         <input type="text"  id="prepend-big-btn" placeholder="CHOOSE A BLOG THUMBNAILS">
                                                                     </div>
                                                                 </div>
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
                                                         <div class="tinymce-single mg-t-30">
                                                             <!--<div id="summernote4" name="textbody"></div>-->
-
-                                                            <textarea name="textbody"></textarea>
+                                                            <input type="text" id="foo" name="textbody">
+                                                           <!-- <textarea name="textbody" id="TinyMCE()"></textarea>-->
                                                         </div>
-                                                    </div>
+
                                                 </div>
                                             </div>
 

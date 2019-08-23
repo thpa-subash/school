@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
     'cebsapp.apps.CebsappConfig',
     'student.apps.StudentConfig',
     'teacher.apps.TeacherConfig',

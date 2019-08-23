@@ -12,7 +12,7 @@ class student_detail(models.Model):
     date = models.DateField(auto_now=True)
     GaurdainsName = models.CharField(max_length=30)
     emailid =models.CharField(max_length=20,default="none")
-    image = models.ImageField(upload_to='images/profile/', blank=True, null=True)
+    image = models.ImageField(upload_to='images/profile/', blank=True,null=True,default='/images/avatar.jpg')
 
     Occupation = models.CharField(max_length=30 ,default="Agricultural")
     MailingAddress = models.CharField(max_length=30,default="Kathmandu")
@@ -28,6 +28,20 @@ class student_detail(models.Model):
     def __str__(self):
      return self.FirstName
 
+
+
+
+
+#class fee(models.Model):
+ #   studentname =models.ForeignKey(student_detail,on_delete=models.CASCADE)
+#
+ #   monthlyfees =models.ForeignKey(classfee,on_delete=models.CASCADE)
+  #  due =models.IntegerField()
+   # advance =models.IntegerField()
+
+    #def __str__(self):
+
+     #   return self.studentname.FirstName
 
 
 

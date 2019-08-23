@@ -21,6 +21,8 @@ def add_teacher(request):
         date = request.POST['date']
         gaurdainname = request.POST['gname']
         maddress = request.POST['maddress']
+        teacher_photo = request.FILES.get('image', default='images/avatar.jpg')
+
         gender = request.POST['gender']
         lti = request.POST['LastteachingInstitution']
         rti = request.POST['runningteachingInstitution']
@@ -50,6 +52,7 @@ def add_teacher(request):
         t.Occupation = occupation
         t.GaurdainsName = gaurdainname
         t.MailingAddress = maddress
+        t.image = teacher_photo
         t.Gender = gender
         t.Services=services
         t.gmailid=gmailid
@@ -87,15 +90,15 @@ def edit_teacher(request, id):
 
 
 def update(request, id):
-    student = student_detail.objects.get(id=id)
-    subash = student_detail(request.POST, instance=student)
+    student = teacher_detail.objects.get(id=id)
+    subash = teacher_detail(request.POST, instance=student)
     if subash.is_valid():
         subash.save()
         return redirect("/approve")
     return render(request, 'student/edit-student.html', {'student': student})
 
 
-def delete(request):
-    studentdelete = student_detail.object.get(id=id)
-    studentdelete.delete()
-    return redirect("/approve")
+def delete(request,id):
+    teacherdelete = teacher_detail.objects.get(id=id)
+    teacherdelete.delete()
+    return redirect("/teacher/approve")
