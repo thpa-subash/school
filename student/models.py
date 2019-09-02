@@ -16,6 +16,7 @@ class student_detail(models.Model):
 
     Occupation = models.CharField(max_length=30 ,default="Agricultural")
     MailingAddress = models.CharField(max_length=30,default="Kathmandu")
+    currentgrade = models.CharField(max_length=30,default="none")
 
     Gender = models.CharField(max_length=20 ,default="Male")
     PhoneNumber = models.CharField(max_length=10,default="None")
@@ -46,14 +47,18 @@ class student_detail(models.Model):
 
 
 
-#class student_fee(models.Model):
- # sid = models.ForeignKey(student_detail, on_delete=models.SET_DEFAULT)
-  #monthlyfee = models.IntegerField()
-  #Admissionfee = models.IntegerField()
-  #Transportationfee = models.IntegerField()
-  #Hostelfee = models.IntegerField()
-  #def __str__(self):
-   #   return self.sid
+class studentfee(models.Model):
+    year = models.IntegerField()
+    classname = models.CharField(max_length=1000)
+    monthlyfee = models.IntegerField()
+    admissionfee = models.IntegerField()
+    transfee = models.IntegerField()
+    compfee = models.IntegerField()
+    hostelfee = models.IntegerField()
+
+    def __str__(self):
+        return self.classname
+
 
 
 

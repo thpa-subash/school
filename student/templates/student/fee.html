@@ -1,0 +1,95 @@
+{% extends "cebsapp/basic.html"%}
+{% load static %}
+{% block title %}Student Fees{% endblock %}
+{% block script %}
+<script>
+
+     var monthly = document.getElementById('mon');
+     var admission = document.getElementById('ad');
+     var trans = document.getElementById('tra');
+     var computer = document.getElementById('com');
+     var tution = document.getElementById('tu');
+     var hostel = document.getElementById('hos');
+     var dues = document.getElementById('du');
+
+
+     var sum = monthly + admission + trans + computer + tution + hostel + dues ;
+
+      console.log(sum);
+      document.getElementById('to').innerHTML(sum)
+
+
+</script>
+
+{% endblock %}
+{% block stitle%}Home{%endblock%}
+{% block s1title%}Student Fees{%endblock%}
+
+{% block body %}
+<div class="product-status mg-tb-15 ">
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 " ></div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 " >
+                        <div class="product-status-wrap ">
+                            <h4>Student Fees</h4>
+
+                            <table>
+                                <tr>
+                                    <th>Particulars</th>
+                                    <th>Amount</th>
+
+                                </tr>
+                                <tr>
+                                    <td>Monthly </td>
+                                    <td id="mon">{{sd.monthly}}</td>
+                                </tr>
+                                 <tr>
+                                    <td>Admission </td>
+                                    <td id="ad">{{sd.admission}}</td>
+                                </tr>
+                                 <tr>
+                                    <td>Transportation </td>
+                                    <td id="tra">{{sd.transp}}</td>
+                                </tr>
+                                 <tr>
+                                    <td>Computer</td>
+                                    <td id="com">{{sd.com}}</td>
+                                </tr>
+                                 <tr>
+                                    <td>Tution</td>
+                                    <td id="tu">2000</td>
+                                </tr>
+                                 <tr>
+                                    <td>Hostel</td>
+                                    <td id="hos">{{sd.hos}}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>DUES</b></td><td id="du">0</td>
+                                </tr>
+                                <tr>
+                                    <td ><b>Advance</b></td>
+                                    <td id="adv">0</td>
+                                </tr>
+                                 <tr>
+                                    <td><b>Total</b></td>
+                                    <td id="tot"></td>
+                                </tr>
+
+
+
+
+
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 " ></div>
+
+            </div>
+        </div>
+{% endblock %}

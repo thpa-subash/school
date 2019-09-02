@@ -7,6 +7,9 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='images/')
     body = models.TextField()
 
+    def tit(self):
+        return self.title[:25]
+
     def summary(self):
         return self.body[:150]
 
