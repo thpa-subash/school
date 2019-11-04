@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.AlterField(
-            model_name='student',
+            model_name='students',
             name='date',
             field=models.DateField(auto_now=True),
         ),

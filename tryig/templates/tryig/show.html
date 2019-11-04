@@ -1,0 +1,225 @@
+{% extends "cebsapp/basic.html" %}
+{% load static %}
+{% block title %}Edit Student{% endblock %}
+
+{% block script%}
+
+
+{% endblock %}
+{% block stitle%}Home{%endblock%}
+{% block s1title%}Edit Student{%endblock%}
+{% block body %}
+ <div class="single-product-tab-area mg-tb-15">
+            <!-- Single pro tab review Start-->
+            <div class="single-pro-review-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="review-tab-pro-inner">
+                                <ul id="myTab3" class="tab-review-design">
+                                    <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i>Edit Student</a></li>
+
+                                </ul>
+                                <form id="myform" action="/tryig/update/{{employee.id}}" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                <div id="myTabContent" class="tab-content custom-product-edit">
+                                    <div class="product-tab-list tab-pane fade active in" id="description">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                        <input type="text" name="FirstName" class="form-control" value="{{employee.FirstName}}" placeholder="First Name">
+                                                    </div>
+                                                     <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                        <input type="date" class="form-control" name="date" value="{{employee.date}}" placeholder="Date-Of-Birth">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                        <input type="text" class="form-control" name="currentgrade" value="{{employee.currentgrade}}" placeholder="Current Grade">
+                                                    </div>
+
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-road" ></i></span>
+                                                        <input type="text" class="form-control" name="MailingAddress" value="{{employee.MailingAddress}}" placeholder="Mailing Address">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                                        <input type="text" class="form-control" name="PhoneNumber" value="{{employee.PhoneNumber}}" placeholder="Phone Number">
+                                                    </div>
+
+                                                    <select class="form-control pro-edt-select form-control-primary"   name="players" >
+                                                        {% if employee.Players == 'none' %}
+                                                            <option class="form-control pro-edt-select form-control-primary" selected value="none">Are you a Regional OR NatiNational Player</option>
+
+															<option  value="Football">yootball</option>
+															<option  value="cricket">Cricket</option>
+															<option  value="Basketball">Basketball</option>
+															<option  value="Chess">Chess</option>
+															<option  value="Badmintion">Badmintion</option>
+                                                            <option  value="Boxing">Boxing</option>
+                                                            <option value="Running">Running</option>
+                                                         {% else %}
+                                                         <option class="form-control pro-edt-select form-control-primary" selected value="{{employee.Players}}">{{editstudent.Players}}</option>
+
+															<option  value="Football">yootball</option>
+															<option  value="cricket">Cricket</option>
+															<option  value="Basketball">Basketball</option>
+															<option  value="Chess">Chess</option>
+															<option  value="Badmintion">Badmintion</option>
+                                                            <option  value="Boxing">Boxing</option>
+                                                            <option value="Running">Running</option>
+                                                              {% endif %}
+
+														</select><br><br>
+                                                    <!-- Default unchecked -->
+                                                        <div name= "hobbies" value="{{employee.Hobbies}}" class="custom-control custom-checkbox">
+                                                            <input type="checkbox" value="Football" class="custom-control-input" >
+                                                            <label class="custom-control-label" >Football</label>
+                                                            <input type="checkbox" value="Cricket" class="custom-control-input" >
+                                                            <label class="custom-control-label" >Cricket</label>
+                                                             <input type="checkbox" value="Singing" class="custom-control-input" >
+                                                            <label class="custom-control-label" >Singing</label>
+                                                             <input type="checkbox" value="Dancing" class="custom-control-input" >
+                                                            <label class="custom-control-label" >Dancing</label>
+                                                             <input type="checkbox" value="BasketBall" class="custom-control-input" >
+                                                            <label class="custom-control-label" >Basketball</label>
+                                                             <input type="checkbox" value="Chess" class="custom-control-input" >
+                                                            <label class="custom-control-label" >Chess</label>
+
+                                                        </div>
+                                                     <div class="custom-control custom-checkbox" value="{{employee.Services}}" name="service" ><br>
+                                                         <label class="custom-control-label" >Did you need any Service ?</label><br>
+                                                            <input type="checkbox" name="Hostel"  value="Hostel" class="custom-control-input" >
+                                                            <label class="custom-control-label" >Hostel</label>
+                                                            <input type="checkbox" name="Transportation" value="Transportation" class="custom-control-input" >
+                                                            <label class="custom-control-label" >Transportation</label>
+                                                             <input type="checkbox" name="Computer" class="custom-control-input" value="Computer" >
+                                                         <label class="custom-control-label">Computer </label>
+
+
+
+
+                                                        </div>
+                                                     <div class="file-upload-inner ts-forms">
+                                                                    <div class="input prepend-big-btn">
+                                                                        <label class="icon-right" for="prepend-big-btn">
+																				<i class="fa fa-download"></i>
+																			</label>
+                                                                        <div class="file-button">
+                                                                            Browse
+                                                                            <input type="file" name="image"  onchange="document.getElementById('prepend-big-btn').value = this.value;">
+                                                                        </div>
+                                                                        <input type="text"  id="prepend-big-btn" placeholder="CHOOSE A PROFILE PICTURE">
+                                                                    </div>
+                                                                </div>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                        <input type="text" name="LastName" value="{{employee.LastName}}" class="form-control" placeholder="Last Name">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                        <input type="text" name="GaurdainsName" value="{{employee.GaurdainsName}}" class="form-control" placeholder="Gaurdain's Name">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                        <input type="text" name="emailid" value="{{employee.emailid}}" class="form-control" placeholder="Gaurdain's Name">
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="fa fa-ticket" aria-hidden="true"></i></span>
+                                                        <input type="text" name="Occupation" value="{{employee.Occupation}}" class="form-control" placeholder="Occupation">
+                                                    </div>
+                                                    <div class="radio">
+                                                       <label>Gender :</label>
+
+                                                              {% if employee.Gender == 'Male' %}
+                                                                <label>
+                                                                 <input type="radio" name="gender" value="Male" checked>Male</label>
+                                                                 {% else %}
+                                                                   <label><input type="radio" name="gender" value="Male">Male</label>
+                                                              {% endif %}
+                                                              {% if employee.Gender == 'Female' %}
+                                                               <label>
+                                                                   <input type="radio" name="gender" value="Female" checked>Female
+                                                               </label>
+                                                                {% else %}
+                                                                <label><input type="radio" name="gender" value="Female">Female</label>
+                                                        {% endif %}
+                                                        {% if employee.Gender == 'Others' %}
+                                                                <label>
+                                                                 <input type="radio" name="gender" value="Others" checked>Others</label>
+                                                                 {% else %}
+                                                                   <label><input type="radio" name="gender" value="Others">Others</label>
+                                                              {% endif %}
+                                                      </div>
+
+                                                    <div class="input-group mg-b-pro-edt">
+                                            <span class="input-group-addon"><i class="fa  fa-institution" aria-hidden="true"></i></span>
+                                            <input type="text" name="LastInstitution" value="{{employee.LastInstitution}}" class="form-control" placeholder="Last institution">
+                                        </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                            <span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                                            <input type="text" name="Grade"  value="{{employee.Grade}}" class="form-control" placeholder="Grade">
+                                        </div>
+                                                     <div class="input-group mg-b-pro-edt">
+                                              <span class="input-group-addon"><i class="fa fa-percent" aria-hidden="true"></i></span>
+                                              <input type="text"  name="Percentage" value="{{employee.Percentage}}" class="form-control" placeholder="Percentage">
+                                          </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                            <!--<div id="form-details" style="display:block">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                        <div class="input-group mg-b-pro-edt">
+                                            <span class="input-group-addon"><i class="fa  fa-institution" aria-hidden="true"></i></span>
+                                            <input type="text" name="linstitution" value="{{editstudent.LastInstitution}}" class="form-control" placeholder="Last institution">
+                                        </div>
+                                        <div class="input-group mg-b-pro-edt">
+                                            <span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                                            <input type="text" name="grade"  value="{{editstudent.Grade}}" class="form-control" placeholder="Grade">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="review-content-section">
+                                          <div class="input-group mg-b-pro-edt">
+                                              <span class="input-group-addon"><i class="fa fa-percent" aria-hidden="true"></i></span>
+                                              <input type="text"  name="percent" value="{{editstudent.Percentage}}" class="form-control" placeholder="Percentage">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>--><br>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
+                                                    <button type="submit"   class="btn btn-success ">Update</button>
+
+                                                    <button type="button" id="close" class="btn btn-danger waves-effect waves-light">Discard</button>
+														</button>
+                                                </div><br>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                              </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

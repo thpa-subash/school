@@ -25,8 +25,8 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 
-import student
-from student import views
+import students
+from students import views
 import finance
 from finance import views
 
@@ -43,18 +43,19 @@ urlpatterns = [
     #urls for dashboard
     path('', cebsapp.views.home, name="home"),
 
-    #student urls
-    path('student/',include('student.urls')),
+    #students urls
+    path('students/',include('students.urls')),
     path('teacher/',include('teacher.urls')),
     path('mailaddress/',include('mailaddress.urls')),
     path('fees/',include('fees.urls')),
     path('blog/',include('blog.urls')),
+    path('tryig/',include('tryig.urls')),
 
    #path('index/',cebsapp.views.index , name="index"),
     #path('home/' ,cebsapp.views.home ,name="home"),
 
-    path('edit-student/', cebsapp.views.edit ,name="edit"),
-    path('details-student/', cebsapp.views.detailsstudent , name="details"),
+    path('edit-students/', cebsapp.views.edit ,name="edit"),
+    path('details-students/', cebsapp.views.detailsstudent , name="details"),
     #teacher urls
     path('addteacher/', cebsapp.views.addteacher ,name="tadd"),
     path('editteacher/', cebsapp.views.editteacher ,name="tedit"),

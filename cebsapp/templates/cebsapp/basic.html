@@ -9,6 +9,7 @@
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- favicon
 		============================================ -->
     {% block css %}{% endblock %}
@@ -111,11 +112,16 @@
 								   <span class="mini-click-non">HOME</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                 <li><a title="New Student" href="/student/add_student/"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">New Student</span></a></li>
+                                 <li><a title="New Student" href="/students/add_student/"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">New Student</span></a></li>
 
-                                <li><a title="Edit Student" href="/student/approve"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Edit Student</span></a></li>
+                                <li><a title="Edit Student" href="/students/approve"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Edit Student</span></a></li>
 
-                                <li><a title="Product Detail" href="/student/student_details"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Student Detail</span></a></li>
+                               <li><a title="Product Detail" href="/students/search"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Student Detail</span></a></li>
+
+                                <!--<li><a title="Add employee" href="/teacher/add_teacher/"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">New Employee</span></a></li>
+                                <li><a title="Edit employee" href="/teacher/approve"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Edit Employee</span></a></li>
+                                -->
+
 
                             </ul>
                         </li>
@@ -125,22 +131,22 @@
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Add Teacher" href="/teacher/add_teacher"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Add Teacher</span></a></li>
                                 <li><a title="Edit Teacher" href="/teacher/approve"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Edit Teacher</span></a></li>
-                                <li><a title="Teacher Details" href="/teacher/teacher_details"><i class="fa fa-paper-plane sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Teacher Details</span></a></li>
+                                <li><a title="Teacher Details" href="/teacher/search"><i class="fa fa-paper-plane sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Teacher Details</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Compose" href="/mailaddress/compose"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Compose</span></a></li>
-                                <li><a title="Inbox" href="/mailaddress/inbox"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Inbox</span></a></li>
-                            </ul>
+                               <!-- <li><a title="Inbox" href="/mailaddress/inbox"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Inbox</span></a></li>
+                             --></ul>
                         </li>
                         <li>
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-flask icon-wrap"></i> <span class="mini-click-non">Finance</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Google Map" href="google-map.html"><i class="fa fa-map-marker sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Total Income</span></a></li>
                                 <li><a title="Data Maps" href="data-maps.html"><i class="fa fa-map-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Total Expenditure</span></a></li>
-                                <li><a title="Pdf Viewer" href="/studentfees"><i class="fa fa-file-pdf-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Student Fees</span></a></li>
+                                <li><a title="Pdf Viewer" href="/students/studentfeelist"><i class="fa fa-file-pdf-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Student Fees</span></a></li>
                                 <li><a title="X-Editable" href="/teacherpayment"><i class="fa fa-fighter-jet sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Teacher Payment</span></a></li>
 
                             </ul>
@@ -148,8 +154,9 @@
                          <li>
                             <a class="has-arrow" href="" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Fees</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Compose" href="/fees/classfee"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Class Fees</span></a></li>
-                                <li><a title="Inbox" href="/fees/updatefees"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Update fees</span></a></li>
+                                <li><a title="Compose" href="/students/studentfees"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Student Fees</span></a></li>
+                                <li><a title="Compose" href="/students/studentfeeupdate"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Class Fees</span></a></li>
+                                <li><a title="Inbox" href="/students/feelist"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Update fees</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -416,7 +423,7 @@
            aria-expanded="false" class="nav-link dropdown-toggle">
             <i class="fa fa-user adminpro-user-rounded header-riht-inf"
                                                            aria-hidden="true"></i>
-            <span class="admin-name">{{user.username}}</span>
+            <span class="admin-name">{{user.username|upper}}</span>
             <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
         </a>
         <ul role="menu"
@@ -1076,35 +1083,8 @@
                 </div>
             </div>
             <!-- Mobile Menu end -->
-            <div class="breadcome-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <div class="breadcome-heading">
-                                            <form role="search" class="">
-                                                <input type="text" placeholder="Search..." class="form-control">
-                                                <a href=""><i class="fa fa-search"></i></a>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <ul class="breadcome-menu">
-                                            <li><a href="#">{% block stitle%}{% endblock%}</a> <span class="bread-slash">/</span>
-                                            </li>
-                                            <li><span class="bread-blod">{% block s1title%}{% endblock%}</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        </div><br>
         {% block body %}
         subash
 
@@ -1208,29 +1188,8 @@
 <script src="//cdn.tinymce.com/4/tinymce.js"></script>
 <!-- Set preference of what should be visible on init -->
  <!--<script src="{% static 'js/tinymce.js' %}"></script>-->
-<script>tinymce.init({
-      selector: '#foo',
-      height: 300,
-      theme: 'modern',
-      plugins: [
-        'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-        'searchreplace wordcount visualblocks visualchars code fullscreen',
-        'insertdatetime media nonbreaking save table contextmenu directionality',
-        'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
-      ],
-      toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-      toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
-      image_advtab: true,
-      templates: [
-        { title: 'Test template 1', content: 'Test 1' },
-        { title: 'Test template 2', content: 'Test 2' }
-      ],
-      content_css: [
-        '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-        '//www.tinymce.com/css/codepen.min.css'
-      ]
-     });
-    </script>
+ {% block script1 %}{% endblock %}
+
 </body>
 
 </html>

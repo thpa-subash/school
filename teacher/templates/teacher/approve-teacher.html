@@ -1,3 +1,4 @@
+
 {% extends "cebsapp/basic.html" %}
 {% load static %}
 {% block title%}Approve Teacher{%endblock%}
@@ -39,8 +40,28 @@
                                     <td>{{teacher.PhoneNumber}}</td>
                                     <td>
                                         <a href="/teacher/edit_teacher/{{teacher.id}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                        <a href="/teacher/delete/{{teacher.id}}"> <button data-toggle="tooltip" onclick="return alert('Are you sure you want to delete {{teacher.FirstName}}&nbsp;{{teacher.LastName}} from Record?');" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
-                                    </td>
+                                          <a href="#" ><button data-toggle="tooltip" title="Delete" class="pd-setting-ed"> <i class="fa fa-trash-o"  data-toggle="modal" data-target="#DangerModalblbgpro" ></i></button></a>
+                                        </td>
+
+                                    <div id="DangerModalblbgpro" class="modal modal-adminpro-general FullColor-popup-DangerModal PrimaryModal-bgcolor fade" role="dialog">
+                                             <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-close-area modal-close-df">
+                                                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <span class="adminpro-icon adminpro-danger-error modal-check-pro information-icon-pro"></span>
+                                                        <h2>Danger!{{teacher.pk}}</h2>
+                                                        <p>DO YOU WANT TO DELETE <strong style="color:red">{{teacher.FirstName|upper}}&nbsp;{{teacher.LastName|upper}}</strong> FROM RECORD</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a data-dismiss="modal" href="#">Cancel</a>
+                                                        <a href="/teacher/delete/{{teacher.id}}">Delete</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                         </div>
+
                                 </tr>
                                 {% endfor %}
 

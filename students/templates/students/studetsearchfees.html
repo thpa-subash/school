@@ -1,0 +1,146 @@
+{% extends "cebsapp/basic.html" %}
+{% load static %}
+{% block title%}Searching Student{%endblock%}
+{% block css%}
+<Style>
+
+</Style>
+
+{%endblock%}
+{% block stitle%}Home{%endblock%}
+{% block s1title%}Edit Student{%endblock%}
+
+
+{% block body%}
+
+
+<div class="main">
+
+
+<div class="single-product-tab-area mg-tb-15">
+            <!-- Single pro tab review Start-->
+            <div class="single-pro-review-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                            <div class="review-tab-pro-inner">
+
+
+                                            <form  role="search" action="/students/studentfees/ " method="POST" >
+                                                {% csrf_token %}
+                                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                                <input class="form-control" type="text" name="q" placeholder="Enter Firstame or Current Grade">
+                                                 </div>
+
+                                                <input type="submit" class="btn btn-success " name="submit" value="Search"/>
+                                            </form>
+                            </div>
+                        </div>
+                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+<div class="credits__container">
+    {% if messages %}
+    <ul class='message'>
+        {% for k in messages %}
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="alert-icon shadow-reset wrap-alert-b">
+
+        <div class="alert alert-warning alert-success-style3 alert-success-stylenone">
+                                <button type="button" class="close sucess-op" data-dismiss="alert" aria-label="Close">
+										<span class="icon-sc-cl" aria-hidden="true">&times;</span>
+									</button>
+                                <i class="fa fa-exclamation-triangle adminpro-warning-danger admin-check-pro admin-check-pro-none" aria-hidden="true"></i>
+                                <p class="message-alert-none"><strong>Warning!</strong> {{k}}</p>
+                            </div>
+                        </div></div>
+
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+
+    <div style="color:blue">
+        {% if se %}
+
+
+       <div class="product-status mg-tb-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="product-status-wrap">
+                            <h4>Searching Results</h4><p></p>
+
+
+                            <table>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+
+                                    <th>Gender</th>
+                                    <th>Father's Name</th>
+                                    <th>Mailing Address</th>
+                                    <th>Phone Number</th>
+                                    <th>Setting</th>
+                                    <th></th>
+                                </tr>
+
+                                {%for k in se %}
+                                <tr>
+                                    <td>
+
+                                    <img src ='{{k.image.url}}'>
+                                    </td>
+                                    <td>{{ k.FirstName|upper}}</td>
+
+                                    <td>{{k.Gender}}</td>
+                                    <td>{{k.GaurdainsName|upper}}</td>
+                                    <td>{{k.MailingAddress}}</td>
+                                    <td>{{k.PhoneNumber}}</td>
+                                    <td>
+
+                                        <a href="/students/fees/{{k.id}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
+
+
+
+                                    </td>
+
+
+                                </tr>
+
+                                {% endfor %}
+
+
+
+
+
+
+                            </table>
+
+
+
+
+
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock%}

@@ -2,19 +2,26 @@ from django.db import models
 
 from datetime import date
 from django.utils import timezone
+import datetime
+class Services(models.Model):
+    service= models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.service
 
 class teacher_detail(models.Model):
     teacher_id = models.AutoField
     FirstName = models.CharField(max_length=20)
     LastName = models.CharField(max_length=20)
-    date = models.DateField(auto_now=True)
+    date = models.DateField(default=timezone.now)
+
     GaurdainsName = models.CharField(max_length=30)
     Occupation = models.CharField(max_length=30 ,default="Agricultural")
     MailingAddress = models.CharField(max_length=30,default="Kathmandu")
     image = models.ImageField(upload_to='images/profile/', blank=True, null=True, default='/images/avatar.jpg')
     Gender = models.CharField(max_length=20 ,default="Male")
     PhoneNumber = models.CharField(max_length=10,default="None")
-    Services=models.CharField(max_length=30,default="None")
+    Services=models.ManyToManyField(Services)
     gmailid=models.CharField(max_length=30,default="None")
     LastteachingInstitution = models.CharField(max_length=400 ,default="None")
     runningteachingInstitution = models.CharField(max_length=1000,default="None")

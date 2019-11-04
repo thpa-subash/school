@@ -1,0 +1,103 @@
+{% extends "cebsapp/basic.html" %}
+{% load static %}
+{% block title %}New Student{% endblock %}
+
+{% block script%}
+
+
+{% endblock %}
+
+{% block stitle%}Home{%endblock%}
+{% block s1title%}New Student{%endblock%}
+{% block body %}<br>
+<div class="container-fluid">
+                <div class="row">
+<div class="col-md-2 col-md-2 col-sm-2 col-xs-2"></div>
+
+ <div class="col-md-8 col-md-8 col-sm-8 col-xs-12">
+                         <div class="hpanel responsive-mg-b-30">
+                            <div class="panel-body">
+                                <a href="#" class="btn btn-success compose-btn btn-block m-b-md">Class Fees</a><br>
+                                <div class="panel-heading hbuilt ">
+                                <div class="p-xs">
+                                    <table class="table table-bordered">
+                                <tr>
+
+                                    <th >Class</th>
+                                    <th >Year</th>
+
+                                    <th >Admission</th>
+                                    <th >Monthly</th>
+                                    <th >Transportation</th>
+                                    <th>Hostel</th>
+
+                                    <th >Computer</th>
+                                    <th >Setting</th>
+
+                                </tr>
+                                        {% for data in list %}
+                                        <tr>
+                                       <td>{{data.classnam}}</td>
+                                       <td>{{data.year}}</td>
+                                       <td>{{data.admissionfee}}</td>
+                                        <td>{{data.monthlyfee}}</td>
+                                        <td>{{data.transfee}}</td>
+                                        <td>{{data.hostelfee}}</td>
+                                        <td>{{data.compfee}}</td>
+                                            <td><a href="/student/deletefeelist/{{data.id}}"><button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a></td>
+                                            </tr>
+
+                                        {% endfor %}
+                                    </table>
+                        </div>
+                    </div>
+
+                            </div>
+                         </div>
+
+                     </div>
+                    <!--<div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class=" product-status-wrap hpanel email-compose mg-tb-15">
+                                <a href="mailbox_compose.html" class="btn btn-success compose-btn btn-block ">Fees in Academic Year</a><br>
+                            <div class="panel-heading hbuilt ">
+                                <div class="p-xs">
+                                    <table>
+                                <tr >
+
+                                    <th>Class</th>
+
+                                    <th>Admission</th>
+                                    <th>Monthly</th>
+                                    <th>Transportation</th>
+                                    <th>Hostel</th>
+
+                                    <th>Computer</th>
+
+                                </tr>
+                                        {% for date in year%}
+                                        <tr>
+
+
+                                    <td>
+                                       {{ date.classname }}
+                                    </td>
+                                    <td>{{ date.afees }}</td>
+                                    <td>{{ date.fees }}</td>
+                                    <td>{{ date.transfees }}</td>
+                                    <td>{{ date.hostelfees }}</td>
+                                    <td>{{ date.compfees }}</td>
+
+                                </tr>
+                                        {% endfor %}
+                                    </table>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+            </div>
+ </div>
+<div class="col-md-3 col-md-3 col-sm-3 col-xs-3"></div>
+
+
+{% endblock %}

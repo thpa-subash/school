@@ -6,7 +6,7 @@ from .import views
 
 urlpatterns = [
 
-    path('classfee/', views.classfee, name="classfee"),
+    path('classfee/', views.classfees, name="classfee"),
 
 
 ]

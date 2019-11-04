@@ -31,6 +31,25 @@
 {% block stitle%}Home{%endblock%}
 {% block s1title%}New Teacher{%endblock%}
 {% block body %}
+{% if messages %}
+    <ul class='message'>
+        {% for k in messages %}
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="alert-icon shadow-reset wrap-alert-b">
+
+        <div class="alert alert-warning alert-success-style3 alert-success-stylenone">
+                                <button type="button" class="close sucess-op" data-dismiss="alert" aria-label="Close">
+										<span class="icon-sc-cl" aria-hidden="true">&times;</span>
+									</button>
+                                <i class="fa fa-exclamation-triangle adminpro-warning-danger admin-check-pro admin-check-pro-none" aria-hidden="true"></i>
+                                <p class="message-alert-none"><strong>Warning!</strong> {{k}}</p>
+                            </div>
+                        </div></div>
+
+        {% endfor %}
+    </ul>
+    {% endif %}
  <div class="single-product-tab-area mg-tb-15">
             <!-- Single pro tab review Start-->
             <div class="single-pro-review-area">
@@ -51,41 +70,43 @@
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                        <input type="text" name="FirstName" class="form-control" placeholder="First Name">
+                                                         {{ form.FirstName }}
+                                                         {{ form.FirstName.error }}
                                                     </div>
                                                      <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                        <input type="date" class="form-control" name="date" placeholder="Date-Of-Birth">
+                                                         {{ form.date }}
+                                                         {{ form.date.error }}
                                                     </div>
 
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-road" ></i></span>
-                                                        <input type="text" class="form-control" name="maddress" placeholder="Mailing Address">
+                                                        {{ form.MailingAddress }}
+                                                        {{ form.MailingAddress.error }}
                                                     </div>
                                                      <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-road" ></i></span>
-                                                        <input type="text" class="form-control" name="gmailid" placeholder="Gmail Id">
+                                                        {{ form.gmailid }}
+                                                        {{ form.gmailid.error }}
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" name="pnumber" placeholder="Phone Number">
+                                                       {{form.PhoneNumber}}
+                                                       {{form.PhoneNumber.error}}
                                                     </div>
 
 
                                                     <div class="input-group mg-b-pro-edt">
                                                       <span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-                                                        <input type="text" name="laststudyinstitution" class="form-control" placeholder="Last Study Institution">
+                                                       {{form.laststudyinstitution}}
+                                                       {{form.laststudyinstitution.error}}
                                                     </div>
 
 
                                                      <div class="custom-control custom-checkbox" name="service" ><br>
                                                          <label class="custom-control-label" >Did you need any Service ?</label><br>
-                                                            <input type="checkbox" name="service[]"  value="Hostel" class="custom-control-input" >
-                                                            <label class="custom-control-label" >Hostel</label>
-                                                            <input type="checkbox" name="service[]" value="Transportation" class="custom-control-input" >
-                                                            <label class="custom-control-label" >Transportation</label>
-                                                             <input type="checkbox" name="service[]" class="custom-control-input" value="Computer" >
-                                                         <label class="custom-control-label">Computer </label>
+                                                          {{form.FAVORITE_SERVICE}}
+                                                          {{form.FAVORITE_SERVICE.error}}
 
 
 
@@ -99,32 +120,33 @@
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                        <input type="text" name="lastname" class="form-control" placeholder="Last Name">
+                                                        {{ form.LastName }}
+                                                        {{ form.LastName.error }}
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                        <input type="text" name="gname" class="form-control" placeholder="Gaurdain's Name">
+                                                       {{ form.GaurdainsName }}
+                                                       {{ form.GaurdainsName.error }}
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-ticket" aria-hidden="true"></i></span>
-                                                        <input type="text" name="occupation" class="form-control" placeholder="Gaurdain's Occupation">
+                                                        {{ form.Occupation }}
+                                                        {{ form.Occupation.error }}
                                                     </div>
                                                     <div class="radio">
                                                       <label>Gender :</label>
-                                                          <label><input type="radio" name="gender" value="Male" checked>Male</label>
-
-
-                                                          <label><input type="radio" name="gender" value="Female">Female</label>
-
-                                                          <label><input type="radio" name="gender" value="Others" >Others</label>
+                                                          {{ form.Gender}}
+                                                          {{ form.Gender.error}}
                                                       </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa  fa-institution" aria-hidden="true"></i></span>
-                                                          <input type="text" name="HigherGrade" class="form-control" placeholder="Higher Study Grade">
+                                                         {{form.HigherGrade}}
+                                                         {{form.HigherGrade.error}}
                                                     </div>
                                                       <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa  fa-institution" aria-hidden="true"></i></span>
-                                                          <input type="text" name="PercentageinlastGrade" class="form-control" placeholder="Percentage in last Grade">
+                                                          {{ form.PercentageinlastGrade}}
+                                                          {{ form.PercentageinlastGrade.error}}
                                                     </div>
 
                                                      <div class="file-upload-inner ts-forms">
@@ -134,7 +156,7 @@
 																			</label>
                                                                         <div class="file-button">
                                                                             Browse
-                                                                            <input type="file" name="image"  onchange="document.getElementById('prepend-big-btn').value = this.value;">
+                                                                             {{form.image}}
 
                                                                         </div>
                                                                         <input type="text"  id="prepend-big-btn" placeholder="CHOOSE A PROFILE PICTURE">
@@ -151,11 +173,13 @@
                                             <div class="review-content-section">
                                         <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa  fa-institution" aria-hidden="true"></i></span>
-                                                          <input type="text" name="LastteachingInstitution" class="form-control" placeholder="Last Teaching Institution">
+                                                         {{ form.LastteachingInstitution}}
+                                                         {{ form.LastteachingInstitution.error}}
                                                     </div>
                                         <div class="input-group mg-b-pro-edt">
                                             <span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-                                            <input type="text" name="experience" class="form-control" placeholder="Any Experience">
+                                            {{ form.experience}}
+                                            {{ form.experience.error}}
                                         </div>
                                       </div>
                                     </div>
@@ -163,7 +187,8 @@
                                         <div class="review-content-section">
                                           <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa  fa-institution" aria-hidden="true"></i></span>
-                                                          <input type="text" name="runningteachingInstitution" class="form-control" placeholder="Running Teaching Institution">
+                                                          {{ form.runningteachingInstitution}}
+                                                          {{ form.runningteachingInstitution.error}}
                                                     </div>
                                         </div>
                                       </div>
