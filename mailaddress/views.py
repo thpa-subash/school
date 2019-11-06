@@ -1,5 +1,5 @@
 from django.core.mail import send_mail
-#from django.http import HttpResponse
+from django.http import JsonResponse
 import json
 from .forms import mailaddress1, settings
 from django .shortcuts import render,redirect
@@ -46,3 +46,7 @@ def inbox(request):
 
 
 
+def getData(request):
+    labels = ["sds","Sds"]
+    data = [111,121]
+    return JsonResponse({'labels': labels, 'data' : data})

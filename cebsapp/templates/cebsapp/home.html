@@ -9,6 +9,38 @@
 
 {% block body%}
 <br><br><br><br>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "http://localhost:8000/mailaddress/get_data/",
+            method: "GET",
+            success: function (data) {
+                console.log(data);
+                var chartdata = {
+                    labels: data.labels,
+                    datasets: [
+                        {
+                            label: 'Number of Students',
+                            backgroundColor: '#4499aa',
+                            borderColor: 'green',
+                            data: data.data
+                        }
+                    ]
+                }
+                var ctx = $("#bar-chart");
+                var bargraph = new Chart(ctx, {
+                    type: 'line',
+                    data: chartdata
+                });
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    });
+</script>
+
 <div class="section-admin container-fluid">
             <div class="row admin text-center">
                 <div class="col-md-12">
@@ -114,7 +146,7 @@
                                 </li>
 
                             </ul>
-                            <div id="morris-area-chart" style="height: 356px;"></div>
+                            <div id="bar-chart" class="bar-chart" style="height: 356px;"></div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
