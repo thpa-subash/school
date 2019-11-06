@@ -19,20 +19,25 @@ def compose(request):
         for email in std_detail.objects.all():
             recievers.append(email.emailid)
 
+@staticmethod
+def send_email(url, toaddr, body, subject):
+            gmail_user = 'subashthapa901@gmail.com'
+            gmail_password = 'PASSWORD'
 
+            email_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+            email_server.login(gmail_user, gmail_password)
 
+            msg = MIMEMultipart()
+            msg['From'] = gmail_user
+            msg['To'] = toaddr
+            msg['Subject'] = subject
 
-
-        send_mail(subject, body, settings.EMAIL_HOST_USER,recievers )
-
-
-        return redirect('/mailaddress/inbox/')
-
-    else:
-        form = mailaddress1()
-        print("error suash occur ")
-
-    return render(request, 'mailaddress/compose.html', {'form': form})
+            # body = "YOUR BODY GOES HERE"
+            msg.attach(MIMEText(body, 'plain'))
+            text = msg.as_string()
+            email_server.sendmail(gmail_user, toaddr, text)
+            email_server.close()
+            send_mail(subject, body, settings.EMAIL_HOST_USER,recievers )
 
 def inbox(request):
    inbox = mailaddress.objects.all()

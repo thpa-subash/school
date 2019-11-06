@@ -41,8 +41,8 @@
                                     <td>{{student.PhoneNumber}}</td>
                                     <td>
                                         <a href="/students/edit_student/{{student.id}}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                             <a href="javascript:void(0)" ><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"> <i class="fa fa-trash-o" aria-hidden="true" data-toggle="modal" data-target="#DangerModalblbgpro" ></i></button></a>
-                                        <div id="DangerModalblbgpro" class="modal modal-adminpro-general FullColor-popup-DangerModal PrimaryModal-bgcolor fade" role="dialog">
+                                             <a href="javascript:void(0)" ><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"> <i class="fa fa-trash-o" aria-hidden="true" data-toggle="modal" data-target="#DangerModalblbgpro{{student.id}}" ></i></button></a>
+                                        <div id="DangerModalblbgpro{{student.id}}" class="modal modal-adminpro-general FullColor-popup-DangerModal PrimaryModal-bgcolor fade" role="dialog">
                                          <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-close-area modal-close-df">

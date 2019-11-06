@@ -310,6 +310,7 @@ def update_fee(request,id):
 
 
 def delete_student(request,id):
+    print(id)
     studentdelete = std_detail.objects.get(id=id)
     studentdelete.delete()
     return render(request,'students/search.html')
